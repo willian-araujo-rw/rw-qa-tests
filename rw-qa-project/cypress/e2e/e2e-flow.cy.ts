@@ -29,6 +29,7 @@ describe('Logando, criando e apagando', () => {
 
         // Apaga
         cy.contains('Fernando Vasconcelos', { timeout: 10000 }).parent().contains('Excluir').click();
+        cy.contains('Fernando Vasconcelos', { timeout: 5000 }).should('not.exist');
 
         // Sai da conta
         cy.get('[data-cy="logout-button"]').click();
