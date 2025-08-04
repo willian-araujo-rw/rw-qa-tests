@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 // cypress/support/commands.ts
 
 // Custom commands for the application
