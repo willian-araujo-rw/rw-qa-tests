@@ -21,11 +21,28 @@ describe('redirecionamento para o website',()=>{
     //clicar no botão Entrar
     cy.get('[data-cy="login-button"]').click();
 
-    //Adicionar novo usuário (nome)
+    //Adicionar novo usuário 
     cy.get('[data-cy="add-user-button"]').click();
+
+    //nome
     cy.get('[data-cy="user-name-input"]').should('be.visible');
     cy.get('[data-cy="user-name-input"]').type('Pedro Fonseca');
+    
+    //email
+    cy.get('[data-cy="user-email-input"]').should('be.visible');
+    cy.get('[data-cy="user-email-input"]').type('pedroqa@teste.com');
 
+    //função
+    cy.get('[data-cy="user-role-select"]').select('Admin');
+
+    //botão adicionar
+    cy.get('[data-cy="save-user-button"]').click();
+
+    //exluir usuario
+    cy.contains('Pedro Fonseca').parent().contains('Excluir').click();
+
+    //logout
+    cy.get('[data-cy="logout-button"]').click();
 
    })
 })
